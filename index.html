@@ -1,63 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WAZIZA VENTURES SHOPPING MALL</title>
-<style>
-body { background: black; color: white; text-align: center; font-family: Arial; padding: 20px; margin: 0; }
-h1 { color: yellow; font-size: 32px; }
-.top { color: #ccc; margin-bottom: 20px; }
-img { width: 250px; border-radius: 15px; }
-.card { background: #222; padding: 20px; border-radius: 15px; margin: 20px 0; }
-.card h2 { margin-top: 0; }
-.price { color: yellow; font-weight: bold; font-size: 18px; }
-button { background: green; color: white; padding: 15px 25px; font-size: 18px; border: none; border-radius: 10px; margin-top: 10px; }
-a { text-decoration: none; }
-.footer { color: #aaa; margin-top: 30px; }
-</style>
+<title>PRACTICE - GOONS SHOP</title>
 </head>
-<body>
+<body style="margin:0;font-family:Arial">
 
-<h1>WAZIZA VENTURES SHOPPING MALL</h1>
-<p class="top">Le Malfrat 🐐 | Mnisa</p>
+<h1 style="text-align:center;background:yellow;padding:10px;margin:0">⚠️ PRACTICE SITE - NOT REAL SHOP - FOR TESTING ONLY</h1>
 
-<!-- PRODUCT 1 -->
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
-<div class="card">
-<h2>Munga Goon Tee - Black</h2>
-<p class="price">T-shirt - KES 1,500</p>
-<p>Size: M | L | XL</p>
-<p>Delivery Countrywide: KES 250</p>
-<a href="https://wa.me/254798512453?text=Rada%20Waziza%20nataka%20kuplace%20order%20ya%20merchandise">
-<button>Order on WhatsApp</button>
-</a>
+<!-- GOONS FAMILY x The15Squad SHOP - PRACTICE COPY -->
+<section id="shop" style="padding:15px;background:#fff;color:#000">
+<h2 style="color:#000">SHOP ALL PRODUCTS - PRACTICE</h2>
+
+<button onclick="openCart()" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#00E676;color:#000;padding:15px 20px;border-radius:50px;font-weight:900;border:2px solid #000;cursor:pointer">🛒 CART (<span id="cartCount">0</span>)</button>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="topa.jpg" style="width:100%;border-radius:10px"><h3>The15Squad Topa</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 750</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Topa%20750" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('The15Squad Topa',750)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="skimask.jpg" style="width:100%;border-radius:10px"><h3>The15Squad Silk Ski Mask</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 850</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Ski%20Mask%20850" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('The15Squad Silk Ski Mask',850)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="gloves.jpg" style="width:100%;border-radius:10px"><h3>The15Squad Gloves</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 450</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Gloves%20450" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('The15Squad Gloves',450)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="bandana-black.jpg" style="width:100%;border-radius:10px"><h3>Bandana Black</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 250</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Black%20Bandana%20250" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('Bandana Black',250)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="linesman.jpg" style="width:100%;border-radius:10px"><h3>Linesman Hoodie</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 2,500</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Linesman%20Hoodie%202500" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('Linesman Hoodie',2500)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="goons-hoodie.jpg" style="width:100%;border-radius:10px"><h3>GOONS Hoodie White XL</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 2,500</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Goons%20Hoodie%202500" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('GOONS Hoodie White XL',2500)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="bandana-red.jpg" style="width:100%;border-radius:10px"><h3>Bandana Red</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 250</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Red%20Bandana%20250" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('Bandana Red',250)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="backpack.jpg" style="width:100%;border-radius:10px"><h3>Army Backpack</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 2,000</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20Backpack%202000" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('Army Backpack',2000)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff">
+<img src="tshirt.jpg" style="width:100%;border-radius:10px"><h3>GOONS T-Shirt</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 1,200</p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20T-Shirt%201200" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER</a>
+<button onclick="addToCart('GOONS T-Shirt',1200)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
+
+<div style="border:3px solid gold;background:#fffbe0;border-radius:15px;padding:10px;text-align:center">
+<img src="bundle.jpg" style="width:100%;border-radius:10px"><h3>FULL BUNDLE - ALL 9 IN 1</h3><p style="color:green;font-weight:bold;font-size:22px">KSh 9,000 <s>10,750</s></p>
+<a href="https://wa.me/254798512453?text=Hi!%20I%20want%20FULL%20BUNDLE%209000" style="display:block;background:#000;color:#fff;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">ORDER BUNDLE</a>
+<button onclick="addToCart('FULL BUNDLE - ALL 9 IN 1',9000)" style="display:block;width:100%;background:#00E676;color:#000;padding:13px;border-radius:10px;font-weight:900;border:0;margin-top:8px;cursor:pointer">+ ADD TO CART</button></div>
 </div>
 
-<!-- PRODUCT 2 -->
-<img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500">
-<div class="card">
-<h2>LINESMAN Hoodie</h2>
-<p class="price">Hoodie - KES 2,500</p>
-<p>Size: M | L | XL</p>
-<p>Delivery Countrywide: KES 250</p>
-<a href="https://wa.me/254798512453?text=Rada%20Waziza%20nataka%20kuplace%20order%20ya%20merchandise">
-<button>Order on WhatsApp</button>
-</a>
+<div id="newProducts" style="display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px"></div>
+<p style="text-align:center;font-weight:bold">ORDER ON WHATSAPP: 0798512453</p>
+
+<div id="cartPopup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:10000;padding:15px">
+<div style="background:#fff;color:#000;border-radius:20px;padding:18px;max-width:450px;margin:20px auto;max-height:90vh;overflow:auto">
+<h2 style="margin:0">🛒 Your Cart <span onclick="closeCart()" style="float:right;cursor:pointer">✕</span></h2>
+<div id="cartItems" style="margin-top:12px">Cart empty</div>
+<div style="background:#f5f5f5;border-radius:12px;padding:12px;margin-top:12px">
+<p id="itemsTotal" style="margin:4px 0">Items Total: KSh 0</p>
+<p style="margin:4px 0">Delivery: KSh 200 (ONE TIME per order)</p>
+<p id="cartTotal" style="font-weight:900;font-size:18px;margin:4px 0">TOTAL TO PAY: KSh 0</p>
+</div>
+<input id="cName" placeholder="Your Name" style="width:100%;padding:14px;margin-top:10px;border-radius:12px;border:1px solid #ddd;background:#fff;color:#000;box-sizing:border-box">
+<input id="cPhone" placeholder="Phone e.g 0798..." style="width:100%;padding:14px;margin-top:8px;border-radius:12px;border:1px solid #ddd;background:#fff;color:#000;box-sizing:border-box">
+<input id="cLocation" placeholder="Location e.g Mombasa, Likoni" style="width:100%;padding:14px;margin-top:8px;border-radius:12px;border:1px solid #ddd;background:#fff;color:#000;box-sizing:border-box">
+<button onclick="checkout()" style="width:100%;background:#00E676;color:#000;padding:16px;border:0;border-radius:14px;font-weight:900;margin-top:12px;cursor:pointer">ORDER ON WHATSAPP →</button>
+<button onclick="clearCart()" style="width:100%;background:#f0f0f0;color:#000;padding:12px;border:0;border-radius:12px;margin-top:8px;cursor:pointer">Clear Cart</button>
+</div>
 </div>
 
-<!-- PRODUCT 3 -->
-<img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500">
-<div class="card">
-<h2>The15Squad</h2>
-<p class="price">Cap - KES 1,000</p>
-<p>One Size</p>
-<p>Delivery Countrywide: KES 250</p>
-<a href="https://wa.me/254798512453?text=Rada%20Waziza%20nataka%20kuplace%20order%20ya%20merchandise">
-<button>Order on WhatsApp</button>
-</a>
+<div id="adminBox" style="display:none;background:#fff;color:#000;border:2px solid #00E676;border-radius:20px;padding:18px;margin-top:20px">
+<h3>🔐 ADMIN - Practice Adding Product</h3>
+<input id="aName" placeholder="Product Name e.g New Cap" style="width:100%;padding:13px;margin-top:8px;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+<input id="aPrice" type="number" placeholder="Price e.g 800" style="width:100%;padding:13px;margin-top:8px;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+<input id="aImg" placeholder="Image file name e.g cap.jpg" style="width:100%;padding:13px;margin-top:8px;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+<button onclick="addProduct()" style="width:100%;background:#00E676;padding:14px;border:0;border-radius:12px;font-weight:900;margin-top:10px;cursor:pointer">+ ADD PRODUCT</button>
 </div>
 
-<p class="footer">Pickup: Free in Mombasa<br>Pay: M-PESA on WhatsApp</p>
-
+<script>
+let cart = [];
+const DELIVERY = 200;
+function addToCart(name,price){ cart.push({name:name,price:price}); saveCart(); alert(name+' added!'); }
+function saveCart(){ document.getElementById('cartCount').innerText=cart.length; renderCart(); }
+function renderCart(){
+  let itemsTotal=0; let html='';
+  cart.forEach((c,i)=>{ itemsTotal+=c.price; html+=`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><span>${c.name}</span><b>KSh ${c.price} <span onclick="removeItem(${i})" style="color:red;cursor:pointer">✕</span></b></div>`; });
+  document.getElementById('cartItems').innerHTML = cart.length? html : 'Cart empty';
+  let total = itemsTotal + (cart.length ? DELIVERY : 0);
+  document.getElementById('itemsTotal').innerText = 'Items Total: KSh ' + itemsTotal;
+  document.getElementById('cartTotal').innerText = 'TOTAL TO PAY: KSh ' + total;
+}
+function removeItem(i){ cart.splice(i,1); saveCart(); }
+function clearCart(){ cart=[]; saveCart(); }
+function openCart(){ renderCart(); document.getElementById('cartPopup').style.display='block'; }
+function closeCart(){ document.getElementById('cartPopup').style.display='none'; }
+function checkout(){
+  if(!cart.length) return alert('Cart is empty');
+  let n=document.getElementById('cName').value, p=document.getElementById('cPhone').value, l=document.getElementById('cLocation').value;
+  if(!n||!p||!l) return alert('Fill Name, Phone, Location');
+  let itemsTotal=cart.reduce((s,c)=>s+c.price,0);
+  let total = itemsTotal + DELIVERY;
+  let list=cart.map(c=>`- ${c.name} (KSh ${c.price})`).join('\n');
+  let msg=`Hi Munga, NEW ORDER (PRACTICE TEST)\nName: ${n}\nPhone: ${p}\nLocation: ${l}\n\n${list}\n\nItems: KSh ${itemsTotal}\nDelivery: KSh 200 (one time)\nTOTAL: KSh ${total}`;
+  window.open('https://wa.me/254798512453?text='+encodeURIComponent(msg));
+  cart=[]; saveCart(); closeCart();
+}
+if(window.location.search.includes('admin=1')) document.getElementById('adminBox').style.display='block';
+let newProds=[];
+function showNew(){ document.getElementById('newProducts').innerHTML = newProds.map(p=>`<div style="border:1px solid #ddd;border-radius:15px;padding:10px;text-align:center;background:#fff"><img src="${p.img}" style="width:100%;border-radius:10px"><h3>${p.name}</h3><p style="color:green;font-weight:bold">KSh ${p.price}</p><button onclick="addToCart('${p.name}',${p.price})" style="width:100%;background:#00E676;padding:13px;border-radius:10px;font-weight:900;border:0">+ ADD TO CART</button></div>`).join(''); }
+function addProduct(){ let n=document.getElementById('aName').value, pr=document.getElementById('aPrice').value, im=document.getElementById('aImg').value; if(!n||!pr||!im) return alert('Fill all'); newProds.push({name:n,price:Number(pr),img:im}); showNew(); alert('Added in practice!'); }
+renderCart();
+</script>
+</section>
 </body>
 </html>
