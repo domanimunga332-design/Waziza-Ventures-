@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMIN - GOONS SHOP</title>
+</head>
+<body style="margin:0;font-family:Arial;background:#fff;color:#000;padding:15px">
+
+<h1 style="text-align:center">🔐 ADMIN - GOONS SHOP</h1>
+<p style="text-align:center;color:#555">Only you should open this page. Customers should NOT see this.</p>
+
+<div style="border:2px solid #00E676;border-radius:15px;padding:15px;max-width:450px;margin:0 auto;background:#fff">
+<h3>Add New Product</h3>
+
+<label>1. Product Name</label>
+<input id="aName" placeholder="e.g New Cap" style="width:100%;padding:14px;margin:8px 0 12px 0;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+
+<label>2. Price (numbers only)</label>
+<input id="aPrice" type="number" placeholder="e.g 800" style="width:100%;padding:14px;margin:8px 0 12px 0;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+
+<label>3. Photo File Name</label>
+<input id="aImg" placeholder="e.g cap.jpg" style="width:100%;padding:14px;margin:8px 0 12px 0;border-radius:10px;border:1px solid #ddd;box-sizing:border-box">
+<p style="font-size:13px;color:#555">You MUST upload the photo to 【entity-GitHub¦canonical_name=GitHub】 first, with EXACT same name. Example: If you type <b>cap.jpg</b> here, you must have uploaded a file called <b>cap.jpg</b> to GitHub.</p>
+
+<button onclick="addProduct()" style="width:100%;background:#00E676;color:#000;padding:16px;border:0;border-radius:12px;font-weight:900;cursor:pointer">+ ADD TO SHOP</button>
+
+<h3 style="margin-top:25px">Products You Added (Practice)</h3>
+<div id="list"></div>
+<button onclick="clearAll()" style="width:100%;background:#ff4444;color:#fff;padding:12px;border:0;border-radius:12px;margin-top:10px;cursor:pointer">Delete All Practice Products</button>
+</div>
+
+<div style="text-align:center;margin-top:20px">
+<a href="practice.html" style="color:#000;font-weight:bold">→ Go To Practice Shop</a><br><br>
+<a href="index.html" style="color:#000">→ Go To Real Shop</a>
+</div>
+
+<script>
+let prods = JSON.parse(localStorage.getItem('goons_practice_admin')||'[]');
+function show(){
+  document.getElementById('list').innerHTML = prods.length ? prods.map((p,i)=>`<div style="border:1px solid #ddd;border-radius:10px;padding:10px;margin-top:8px;display:flex;justify-content:space-between"><span>${p.name} - KSh ${p.price} - ${p.img}</span><button onclick="del(${i})" style="background:red;color:#fff;border:0;border-radius:8px;padding:5px 10px">Delete</button></div>`).join('') : '<p>No practice products yet.</p>';
+}
+function addProduct(){
+  let n=document.getElementById('aName').value;
+  let pr=document.getElementById('aPrice').value;
+  let im=document.getElementById('aImg').value;
+  if(!n||!pr||!im) return alert('Fill Name, Price AND Photo Name');
+  prods.push({name:n,price:Number(pr),img:im});
+  localStorage.setItem('goons_practice_admin',JSON.stringify(prods));
+  // Also save for practice.html to show
+  localStorage.setItem('goons_new',JSON.stringify(prods));
+  show();
+  alert('Added! Now go to Practice Shop to see it.');
+  document.getElementById('aName').value=''; document.getElementById('aPrice').value=''; document.getElementById('aImg').value='';
+}
+function del(i){ prods.splice(i,1); localStorage.setItem('goons_practice_admin',JSON.stringify(prods)); localStorage.setItem('goons_new',JSON.stringify(prods)); show(); }
+function clearAll(){ if(confirm('Delete all?')){ prods=[]; localStorage.removeItem('goons_practice_admin'); localStorage.removeItem('goons_new'); show(); } }
+show();
+</script>
+</body>
+</html>
